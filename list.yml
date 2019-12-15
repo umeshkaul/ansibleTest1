@@ -1,0 +1,9 @@
+---
+- hosts: all
+  tasks:
+  - name: list files in folder
+    command: ls /tmp
+    register: output
+  - name: Show output
+    debug:
+      msg: "{{ output.stdout }}"

@@ -1,0 +1,10 @@
+---
+- hosts: all
+  tasks:
+    - name: Ansible for loop example
+      debug:
+        msg: >
+          ---- Ansible for loop example ----
+          {% for addr in ansible_all_ipv4_addresses -%}
+            ip address of {{ ansible_hostname }} : {{ loop.index }} = {{ addr }}
+          {% endfor %}

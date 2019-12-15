@@ -1,0 +1,12 @@
+---
+ 
+-  hosts: ws
+   become: true
+   #gather_facts: false
+
+   tasks:
+   - name: Configure motd (message of the day)
+     copy:
+       src: ws.motd
+       dest: /etc/motd
+...

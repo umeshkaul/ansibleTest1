@@ -1,0 +1,19 @@
+---
+- hosts: all
+  tasks:
+   - name: Ansible Jinja2 if
+     debug:
+       msg: >
+           ---=== Ansible Jinja2 if statement ===---
+           {# If the hostname is chef-ws1 , display a message -#}
+           {% if ansible_hostname == 'chef-ws1' -%}
+              This is chef-ws1 
+           {% endif %}
+           {% set exvar = 'defined' -%}
+           {% if exvar is defined -%}
+              exvar is defined
+           {% else -%}
+              exvar is not defined
+           {% endif %}
+
+...
